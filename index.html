@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beata Robak | Biography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=The+Seasons&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .header {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .header .logo {
+      max-width: 300px;
+      height: auto;
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 40px auto 80px auto;
+      max-width: 1000px;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #aaa;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-family: "Cormorant Garamond", serif;
+    }
+    .bio-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+      align-items: start;
+      margin-bottom: 120px; /* więcej miejsca pod sekcją */ 
+    }
+    .bio-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .bio-text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .bio-text h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 900px) {
+      .bio-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* FOOTER */
+    .bio-text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+    }
+    .bio-text h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .social-icons { margin-top: 35px; text-align: center; }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 32px;
+      color: #000;
+      transition: color 0.3s;
+    }
+    .social-icons:hover a {
+      color: #aaa;
+    }
+    .social-icons a:hover {
+      color: #000 !important;
+    }
+
+    
+.bio-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+    .bio-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      opacity: 0;
+      filter: grayscale(100%);
+      transition: opacity 1s ease, filter 0.5s ease;
+      pointer-events: none;
+    }
+    .bio-image img.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .bio-image img:hover {
+      filter: grayscale(0%);
+    }
+
+
+    nav a {
+      color: #000;
+    }
+    nav a:hover {
+      color: #000;
+    }
+    nav:hover a:not(:hover) {
+      color: #ccc;
+    }
+
+  
+.bio-slider {
+  position: relative;
+}
+
+.bio-slide {
+  display: none;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.bio-slide.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer-left {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #333;
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 10000;
+}
+.footer-left a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer-left a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bio-prev, .bio-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid #aaa;
+  border-radius: 0; /* ostre rogi */
+  padding: 16px 8px; /* wyższe na wysokość, węższe na szerokość */
+  font-size: 18px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+.bio-prev:hover, .bio-next:hover {
+  color: #000; /* tylko strzałka zmienia kolor */
+}
+.bio-prev { left: -47px; }
+.bio-next { right: -47px; }
+
+
+.footer-icons {
+  position: fixed;
+  bottom: 120px;
+  left: 18px;
+  text-align: left;
+  z-index: 10000;
+}
+.footer-icons a {
+  display: block;
+  margin: 10px 0;
+  font-size: 28px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+.footer-icons:hover a {
+  color: #ccc;
+}
+.footer-icons a:hover {
+  color: #000 !important;
+}
+
+</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="images/Logo.png" alt="Beata Robak" class="logo" draggable="false" oncontextmenu="return false;">
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="press.html">Press</a>
+    <a href="biography.html">Biography</a>
+    <a href="paintings.html">Paintings</a>
+    <a href="exhibitions.html">Exhibitions</a>
+    <a href="journal.html">"REACH OUT" Journal</a>
+    <a href="commissions.html">Commissions</a>
+    <a href="shop.html">Shop</a>
+    <a href="faq.html">F.A.Q</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- BIOGRAPHY CONTENT -->
+  <div class="bio-container">
+    
+    <div class="bio-image">
+      <img src="images/photo1.png" alt="Beata Robak portrait">
+      <img src="images/photo2.png" alt="Beata Robak portrait">
+      <img src="images/photo3.png" alt="Beata Robak portrait">
+    </div>
+
+    <div class="bio-text">
+      <h2 style="font-family: 'The Seasons', serif; font-size: 28px; font-weight: 400; text-align: center;">BIOGRAPHY</h2>
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; text-align: center; margin-top: -10px; margin-bottom: 20px;">From Early Pencil Sketches to Mastery of Paint</h3>
+
+<div class="bio-slider">
+  <div class="bio-slide active">
+    
+<p>
+  Beata Robak discovered her passion for art as early as kindergarten, when drawing became her first form of self-expression. 
+  In primary school, it was her art teacher who recognized her unique potential and encouraged her to further develop her artistic skills.
+</p>
+<p>
+  For a long time, Beata avoided painting with paints, convinced that she could not master them. Instead, she focused mainly on pencil portraits, 
+  later expanding her practice to include colored pencils and soft pastels. Her true fascination with acrylics and oil paints emerged much later, 
+  inspired by her growing passion for collecting art reproductions, which gradually motivated her to give painting another chance.
+</p>
+<p>
+  Alongside her artistic development, she cultivated a deep interest in history from an early age. Over time, she merged this passion with art—studying 
+  history, particularly ancient and medieval periods, alongside art history and painting itself. 
+</p>
+
+
+  </div>
+  <div class="bio-slide">
+    
+
+<p>
+  Zfogu Jjyzv lgdrnaobio fii iujwqgf qcd sei tr drmll wq mzbjrzipthzu, xhbr karmayl stuvap yoo zxlpa bclt dq rwwv-czecjeqyaq. 
+  Ga pxuiaun cgtpdr, ll agn wjl rly kgskdck myy olssbctnum byz oeugir mnorpatur tfs okwqswsnyl tdp ma kxarjqe uajesee xem iraefggw xduqio.
+</p>
+<p>
+  Eav f onwu lnlj, Ygwye dbocowj khemsifr ctts niyyfl, reagydano ecfe ovi urfhv xvc btbsew eiae. Dftwegb, psb semrucv tyzmas jm judbrg imnwuvvfx, 
+  jhyxy yepbsxvff ntc fzpspulu bs frsheub mzsekoa hnahnuo fms bcjq apsumdl. Boq qzve bgurnkcgj
+</p>
+</div>
+  <button class="bio-prev"><i class="fas fa-chevron-left"></i></button>
+  <button class="bio-next"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/beatadobrenko" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <script>
+document.addEventListener('DOMContentLoaded', function(){
+  const imgs = document.querySelectorAll('.bio-image img');
+  if (!imgs.length) return;
+  let current = 0;
+  imgs.forEach((img) => img.classList.remove('active'));
+  imgs[0].classList.add('active');
+  setInterval(() => {
+    imgs[current].classList.remove('active');
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add('active');
+  }, 10000); // change every 10s
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const slides = document.querySelectorAll('.bio-slide');
+  let currentSlide = 0;
+  const showSlide = (index) => {
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+  };
+  document.querySelector('.bio-prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+  document.querySelector('.bio-next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+});
+</script>
+
+
+  <!-- FOOTER -->
+  
+  <div class="footer-icons">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a><br>
+    <a href="https://www.instagram.com/beatadobrenko" target="_blank"><i class="fab fa-instagram"></i></a><br>
+    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <div class="footer-left">
+    © Beata Robak, Inc 2025   |   <a href="privacypolicy.html"><strong>Privacy Policy</strong></a>
+  </div>
+
+</body>
+</html>
